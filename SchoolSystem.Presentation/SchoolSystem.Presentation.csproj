@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2B3BEF8C-B7DD-4EBF-A8B2-E72426F37D49}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SchoolSystem.Presentation</RootNamespace>
+    <AssemblyName>SchoolSystem.Presentation</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Quran\Parts\clsPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Quran\Parts\ctrPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Quran\Parts\ctrPage.Designer.cs">
+      <DependentUpon>ctrPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quran\Parts\ctrPageReview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Quran\Parts\ctrPageReview.Designer.cs">
+      <DependentUpon>ctrPageReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quran\Parts\ctrQuranPartPages.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Quran\Parts\ctrQuranPartPages.Designer.cs">
+      <DependentUpon>ctrQuranPartPages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quran\StudentProgress\ctrStudentList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Quran\StudentProgress\ctrStudentList.Designer.cs">
+      <DependentUpon>ctrStudentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quran\StudentProgress\frmAddStudentPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quran\StudentProgress\frmAddStudentPart.Designer.cs">
+      <DependentUpon>frmAddStudentPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quran\Parts\frmQuranParts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quran\Parts\frmQuranParts.Designer.cs">
+      <DependentUpon>frmQuranParts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quran\StudentProgress\frmArchiveList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quran\StudentProgress\frmArchiveList.Designer.cs">
+      <DependentUpon>frmArchiveList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quran\StudentProgress\frmStudentParts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quran\StudentProgress\frmStudentParts.Designer.cs">
+      <DependentUpon>frmStudentParts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Subjects\StudentAssignments\frmAddUpdateStudentSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subjects\StudentAssignments\frmAddUpdateStudentSubject.Designer.cs">
+      <DependentUpon>frmAddUpdateStudentSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Subjects\StudentAssignments\frmStudentSubjectList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subjects\StudentAssignments\frmStudentSubjectList.Designer.cs">
+      <DependentUpon>frmStudentSubjectList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Subjects\ctrSubjectInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Subjects\ctrSubjectInfo.Designer.cs">
+      <DependentUpon>ctrSubjectInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Subjects\frmAddUpdateSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subjects\frmAddUpdateSubject.Designer.cs">
+      <DependentUpon>frmAddUpdateSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Subjects\frmSubjectInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subjects\frmSubjectInfo.Designer.cs">
+      <DependentUpon>frmSubjectInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Subjects\frmSubjectsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subjects\frmSubjectsList.Designer.cs">
+      <DependentUpon>frmSubjectsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Subjects\frmSubjectTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subjects\frmSubjectTree.Designer.cs">
+      <DependentUpon>frmSubjectTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teachers\ctrTeacherInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Teachers\ctrTeacherInfo.Designer.cs">
+      <DependentUpon>ctrTeacherInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teachers\frmAddUpdateTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teachers\frmAddUpdateTeacher.Designer.cs">
+      <DependentUpon>frmAddUpdateTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teachers\frmShowTeacherInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teachers\frmShowTeacherInfo.Designer.cs">
+      <DependentUpon>frmShowTeacherInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teachers\frmTeachersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teachers\frmTeachersList.Designer.cs">
+      <DependentUpon>frmTeachersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AcademicStructure\frmEducationStructureTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcademicStructure\frmEducationStructureTree.Designer.cs">
+      <DependentUpon>frmEducationStructureTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\ctrPerson.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="People\ctrPerson.Designer.cs">
+      <DependentUpon>ctrPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\frmAddUpdatePerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\frmAddUpdatePerson.Designer.cs">
+      <DependentUpon>frmAddUpdatePerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shell\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\frmPersonsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\frmPersonsList.Designer.cs">
+      <DependentUpon>frmPersonsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\frmShowPersonInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\frmShowPersonInfo.Designer.cs">
+      <DependentUpon>frmShowPersonInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="AcademicStructure\frmAddChildren.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcademicStructure\frmAddChildren.Designer.cs">
+      <DependentUpon>frmAddChildren.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Students\ctrStudentCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Students\ctrStudentCard.Designer.cs">
+      <DependentUpon>ctrStudentCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Students\frmAddUpdateStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Students\frmAddUpdateStudent.Designer.cs">
+      <DependentUpon>frmAddUpdateStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Students\frmShowStudentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Students\frmShowStudentInfo.Designer.cs">
+      <DependentUpon>frmShowStudentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Students\frmStudentsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Students\frmStudentsList.Designer.cs">
+      <DependentUpon>frmStudentsList.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Quran\Parts\ctrPage.resx">
+      <DependentUpon>ctrPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quran\Parts\ctrPageReview.resx">
+      <DependentUpon>ctrPageReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quran\Parts\ctrQuranPartPages.resx">
+      <DependentUpon>ctrQuranPartPages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quran\StudentProgress\ctrStudentList.resx">
+      <DependentUpon>ctrStudentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quran\StudentProgress\frmAddStudentPart.resx">
+      <DependentUpon>frmAddStudentPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quran\Parts\frmQuranParts.resx">
+      <DependentUpon>frmQuranParts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quran\StudentProgress\frmArchiveList.resx">
+      <DependentUpon>frmArchiveList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quran\StudentProgress\frmStudentParts.resx">
+      <DependentUpon>frmStudentParts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subjects\StudentAssignments\frmAddUpdateStudentSubject.resx">
+      <DependentUpon>frmAddUpdateStudentSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subjects\StudentAssignments\frmStudentSubjectList.resx">
+      <DependentUpon>frmStudentSubjectList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subjects\ctrSubjectInfo.resx">
+      <DependentUpon>ctrSubjectInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subjects\frmAddUpdateSubject.resx">
+      <DependentUpon>frmAddUpdateSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subjects\frmSubjectInfo.resx">
+      <DependentUpon>frmSubjectInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subjects\frmSubjectsList.resx">
+      <DependentUpon>frmSubjectsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subjects\frmSubjectTree.resx">
+      <DependentUpon>frmSubjectTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teachers\ctrTeacherInfo.resx">
+      <DependentUpon>ctrTeacherInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teachers\frmAddUpdateTeacher.resx">
+      <DependentUpon>frmAddUpdateTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teachers\frmShowTeacherInfo.resx">
+      <DependentUpon>frmShowTeacherInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teachers\frmTeachersList.resx">
+      <DependentUpon>frmTeachersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AcademicStructure\frmEducationStructureTree.resx">
+      <DependentUpon>frmEducationStructureTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\ctrPerson.resx">
+      <DependentUpon>ctrPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\frmAddUpdatePerson.resx">
+      <DependentUpon>frmAddUpdatePerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\frmPersonsList.resx">
+      <DependentUpon>frmPersonsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shell\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\frmShowPersonInfo.resx">
+      <DependentUpon>frmShowPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AcademicStructure\frmAddChildren.resx">
+      <DependentUpon>frmAddChildren.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Students\ctrStudentCard.resx">
+      <DependentUpon>ctrStudentCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Students\frmAddUpdateStudent.resx">
+      <DependentUpon>frmAddUpdateStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Students\frmShowStudentInfo.resx">
+      <DependentUpon>frmShowStudentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Students\frmStudentsList.resx">
+      <DependentUpon>frmStudentsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SchoolSystem.Enums\1SchoolSystem.Enums.csproj">
+      <Project>{f5360fb8-3609-4654-84bb-7f331cf5b08f}</Project>
+      <Name>1SchoolSystem.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SchoolSystem.Business\3SchoolSystem.Business.csproj">
+      <Project>{3f17ed6e-13a0-4ba4-9fea-1ef73f16f1be}</Project>
+      <Name>3SchoolSystem.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P1.png" />
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WallPaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\عم.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Structure Education 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Teachers 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\The fase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Image\*.*">
+      <Link>Image\%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,32 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build output
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# Generated and temporary files
+*.pdb
+*.cache
+*.log
+*.tmp
+*.bak
+*.orig
+TestResults/
+_rollback/
+
+# NuGet packages restored by tooling
+packages/
+
+# Local database files and backups
+*.mdf
+*.ldf
+*.bak
