@@ -1,60 +1,60 @@
 # School System
 
-تطبيق مكتبي لإدارة بيانات المدرسة ومتابعة الطلاب والمعلمين والبنية التعليمية، مبني باستخدام Windows Forms وطبقات منفصلة لواجهة المستخدم ومنطق الأعمال والوصول إلى البيانات.
+A Windows desktop application for managing school data, students, teachers, academic structure, and Quran learning progress. It is built with Windows Forms and separates the user interface, business logic, and data-access responsibilities into distinct layers.
 
-لنسخة العرض الموجهة للتوظيف وGitHub، راجع [دراسة حالة المشروع](PORTFOLIO.md).
+For a presentation-focused overview suitable for recruiters and GitHub visitors, see the [project portfolio case study](PORTFOLIO.md).
 
-## الوظائف الحالية
+## Current features
 
-- إدارة الأشخاص والطلاب والمعلمين.
-- إدارة المراحل والصفوف والشُّعب والمواد الدراسية.
-- ربط الطلاب بالمواد الدراسية.
-- متابعة أجزاء وصفحات القرآن وتقدّم الطلاب فيها.
-- تسجيل أخطاء التلاوة ومراجعة التقدّم.
+- Manage people, students, and teachers.
+- Manage educational stages, grades, sections, and subjects.
+- Assign subjects to students.
+- Track Quran parts, pages, and student progress.
+- Record recitation errors and review learning progress.
 
-## بنية المشروع
+## Solution architecture
 
-| المشروع | المسؤولية |
+| Project | Responsibility |
 | --- | --- |
-| `SchoolSystem.Presentation` | واجهة المستخدم المبنية بـ Windows Forms |
-| `SchoolSystem.Business` | منطق الأعمال والتحقق من العمليات |
-| `SchoolSystem.Data` | الوصول إلى SQL Server باستخدام ADO.NET |
-| `SchoolSystem.Enums` | التعدادات والأنواع المشتركة بين الطبقات |
-| `SchoolSystem.Tests` | اختبارات وحدة لمنطق الأعمال الذي لا يعتمد على قاعدة البيانات |
+| `SchoolSystem.Presentation` | Windows Forms user interface |
+| `SchoolSystem.Business` | Business rules and operation validation |
+| `SchoolSystem.Data` | SQL Server access through ADO.NET |
+| `SchoolSystem.Enums` | Enums and types shared across layers |
+| `SchoolSystem.Tests` | Unit tests for business logic that does not require a database |
 
-## التنظيم حسب المجال
+## Domain organization
 
-تُجمع الملفات داخل كل طبقة بحسب مجال العمل بدل توزيعها في مجلدات عامة. المجالات الرئيسية هي:
+Files within each layer are grouped by business domain instead of being placed in generic folders. The main domains are:
 
-| المجال | أمثلة على المحتوى |
+| Domain | Example content |
 | --- | --- |
-| `People` | الأشخاص والدول والبيانات الأساسية |
-| `Students` | بيانات الطلاب وشاشاتهم |
-| `Teachers` | بيانات المعلمين وشاشاتهم |
-| `AcademicStructure` | المراحل والصفوف والشُّعب والشجرة التعليمية |
-| `Subjects` | المواد الدراسية وربط الطلاب بها |
-| `Quran` | الصفحات والأجزاء والمسارات وتقدّم الطلاب |
+| `People` | People, countries, and basic personal data |
+| `Students` | Student data and user interfaces |
+| `Teachers` | Teacher data and user interfaces |
+| `AcademicStructure` | Stages, grades, sections, and the academic tree |
+| `Subjects` | Subjects and student-subject assignments |
+| `Quran` | Pages, parts, tracks, and student progress |
 
-يظهر المجال نفسه عبر الطبقات عند الحاجة؛ فمثلًا توجد واجهات الطلاب في `SchoolSystem.Presentation/Students`، ومنطقهم في `SchoolSystem.Business/Students`، والوصول إلى بياناتهم في `SchoolSystem.Data/Students`.
+The same domain appears across layers when needed. For example, student interfaces are located in `SchoolSystem.Presentation/Students`, student business logic in `SchoolSystem.Business/Students`, and student data access in `SchoolSystem.Data/Students`.
 
-## المتطلبات
+## Requirements
 
-- Windows 10 أو أحدث.
-- Visual Studio 2022 مع حزمة **.NET desktop development**.
+- Windows 10 or later.
+- Visual Studio 2022 with the **.NET desktop development** workload.
 - .NET Framework 4.8 Developer Pack.
 - Microsoft SQL Server.
 
-## إعداد قاعدة البيانات
+## Database setup
 
-يتوقع التطبيق وجود قاعدة بيانات باسم `SchoolSystemDatabase` على SQL Server المحلي.
+The application expects a local SQL Server database named `SchoolSystemDatabase`.
 
-إعداد الاتصال موجود في:
+The connection configuration is stored in:
 
 ```text
 SchoolSystem.Presentation/App.config
 ```
 
-القيمة الافتراضية تستخدم Windows Authentication:
+The default configuration uses Windows Authentication:
 
 ```xml
 <add name="SchoolSystemDatabase"
@@ -62,61 +62,61 @@ SchoolSystem.Presentation/App.config
      providerName="System.Data.SqlClient" />
 ```
 
-يمكن تعديل `Data Source` ليتوافق مع اسم خادم SQL Server لديك. لا تضع اسم مستخدم أو كلمة مرور حقيقية داخل المستودع؛ استخدم إعدادًا محليًا آمنًا عند الحاجة.
+Change `Data Source` to match your SQL Server instance. Do not commit real usernames or passwords to the repository; use secure local configuration when credentials are required.
 
-يمكن إنشاء مخطط قاعدة جديد بتنفيذ الملف:
+Create a new database schema by running:
 
 ```text
 Database/Scripts/001_CreateSchema.sql
 ```
 
-توجد تعليمات الإعداد وملاحظات البيانات المرجعية في `Database/README.md`. لا يتضمن السكربت بيانات الأشخاص أو الطلاب أو المعلمين.
+Additional setup instructions and reference-data notes are available in `Database/README.md`. The schema script does not include person, student, or teacher records.
 
-## التشغيل
+## Running the application
 
-1. افتح الحل `SchoolSystem.Presentation/SchoolSystem.sln` باستخدام Visual Studio.
-2. تأكد من توفر قاعدة البيانات ومن صحة سلسلة الاتصال في `SchoolSystem.Presentation/App.config`.
-3. اجعل `SchoolSystem.Presentation` هو Startup Project.
-4. ابنِ الحل باستخدام **Build > Build Solution**.
-5. شغّل التطبيق بالضغط على `F5`.
+1. Open `SchoolSystem.Presentation/SchoolSystem.sln` in Visual Studio.
+2. Confirm that the database is available and that the connection string in `SchoolSystem.Presentation/App.config` is correct.
+3. Set `SchoolSystem.Presentation` as the startup project.
+4. Build the solution using **Build > Build Solution**.
+5. Press `F5` to run the application.
 
-يمكن بناء الحل من Developer PowerShell for Visual Studio أيضًا:
+The solution can also be built from Developer PowerShell for Visual Studio:
 
 ```powershell
 msbuild .\SchoolSystem.Presentation\SchoolSystem.sln /p:Configuration=Debug
 ```
 
-## الاختبارات
+## Tests
 
-يحتوي `SchoolSystem.Tests` على اختبارات MSTest تستهدف:
+`SchoolSystem.Tests` contains MSTest tests covering:
 
-- القيم الافتراضية لعقد شجرة المواد والهيكل التعليمي.
-- إنشاء العقد من البيانات وإضافة الأبناء.
-- استخراج رقم صفحة القرآن من اسم ملف الصورة.
+- Default values for subject-tree and academic-structure nodes.
+- Constructing nodes from data and adding child nodes.
+- Extracting a Quran page number from an image filename.
 
-لا تتصل هذه الاختبارات بقاعدة البيانات ولا تغيّر أي بيانات. لتشغيلها من Visual Studio افتح **Test Explorer** ثم اختر **Run All Tests**. ويمكن تشغيلها من Developer PowerShell بعد بناء الحل:
+These tests do not connect to SQL Server or modify any data. To run them in Visual Studio, open **Test Explorer** and select **Run All Tests**. After building the solution, they can also be run from Developer PowerShell:
 
 ```powershell
 vstest.console .\SchoolSystem.Tests\bin\Debug\SchoolSystem.Tests.dll
 ```
 
-## الأصول المحلية
+## Local assets
 
-- يحتوي `Image` على الصور المستخدمة في القوائم الرئيسية. ينسخها المشروع تلقائيًا إلى مجلد `Image` بجوار الملف التنفيذي عند البناء.
-- يحتوي `Quran` على صور صفحات القرآن المستخدمة في المزامنة والعرض. لا تُنسخ هذه الصور إلى مجلد البناء بسبب حجمها.
+- `Image` contains images used by the main navigation interfaces. During a build, the project automatically copies them into an `Image` folder beside the executable.
+- `Quran` contains Quran page images used for synchronization and display. Because of their size, these images are not copied into the build output.
 
-عند مزامنة صفحات القرآن يبحث التطبيق بالترتيب عن:
+When synchronizing Quran pages, the application searches for the image folder in this order:
 
-1. المجلد الذي اختاره المستخدم وحُفظ في الإعداد `QuranFolderPath`.
-2. مجلد `Quran` بجوار الملف التنفيذي.
-3. مجلد `Quran` الموجود في جذر المشروع أثناء التطوير.
-4. مجلد يختاره المستخدم من نافذة اختيار المجلد.
+1. The folder selected by the user and saved in the `QuranFolderPath` setting.
+2. A `Quran` folder beside the executable.
+3. The `Quran` folder in the project root during development.
+4. A folder selected by the user through the folder-selection dialog.
 
-إذا نُقل مجلد القرآن إلى جهاز آخر، فإن تشغيل المزامنة من المجلد الجديد يحدّث مسارات الصفحات في قاعدة البيانات.
+If the Quran folder is moved to another computer, running synchronization from its new location updates the page paths stored in the database.
 
-## ملاحظات الحالة الحالية
+## Current project status
 
-- يستهدف الحل .NET Framework 4.8.
-- التطبيق مصمم للعمل على Windows.
-- توجد 9 اختبارات وحدة، ولا توجد اختبارات تكامل لقاعدة البيانات في الوقت الحالي.
-- يلزم توفير قاعدة البيانات قبل تشغيل الوظائف المعتمدة عليها.
+- The solution targets .NET Framework 4.8.
+- The application is designed for Windows.
+- The project currently includes 9 unit tests and no database integration tests.
+- The database must be available before using database-dependent features.
