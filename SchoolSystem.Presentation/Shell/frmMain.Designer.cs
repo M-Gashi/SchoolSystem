@@ -135,7 +135,7 @@
             this.btnTrreSub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTrreSub.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Bold);
             this.btnTrreSub.ForeColor = System.Drawing.Color.GreenYellow;
-            this.btnTrreSub.Location = new System.Drawing.Point(62, 686);
+            this.btnTrreSub.Location = new System.Drawing.Point(65, 686);
             this.btnTrreSub.Name = "btnTrreSub";
             this.btnTrreSub.Size = new System.Drawing.Size(178, 41);
             this.btnTrreSub.TabIndex = 24;
@@ -165,7 +165,6 @@
             // 
             this.btnQuranSync.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(90)))));
             this.btnQuranSync.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnQuranSync.Enabled = false;
             this.btnQuranSync.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(80)))));
             this.btnQuranSync.FlatAppearance.BorderSize = 0;
             this.btnQuranSync.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
